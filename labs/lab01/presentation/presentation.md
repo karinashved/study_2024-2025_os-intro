@@ -1,207 +1,122 @@
 ---
 ## Front matter
 lang: ru-RU
-title: Структура научной презентации
-subtitle: Простейший шаблон
-author:
-  - Кулябов Д. С.
-institute:
-  - Российский университет дружбы народов, Москва, Россия
-  - Объединённый институт ядерных исследований, Дубна, Россия
-date: 01 января 1970
+title: Установка ОС на виртуальную машину
+author: |
+	 Швед Карина\inst{1}
 
-## i18n babel
-babel-lang: russian
-babel-otherlangs: english
+institute: |
+	\inst{1}Российский Университет Дружбы Народов
 
-## Formatting pdf
+date: 7 марта, 2025, Москва, Россия
+
+## Formatting
+mainfont: PT Serif
+romanfont: PT Serif
+sansfont: PT Sans
+monofont: PT Mono
 toc: false
-toc-title: Содержание
 slide_level: 2
-aspectratio: 169
-section-titles: true
 theme: metropolis
-header-includes:
+header-includes: 
  - \metroset{progressbar=frametitle,sectionpage=progressbar,numbering=fraction}
+ - '\makeatletter'
+ - '\beamer@ignorenonframefalse'
+ - '\makeatother'
+aspectratio: 43
+section-titles: true
+
 ---
 
-# Информация
+# Цели и задачи работы
 
-## Докладчик
+## Цель лабораторной работы
 
-:::::::::::::: {.columns align=center}
-::: {.column width="70%"}
+Целью данной работы является приобретение практических навыков установки операционной системы на виртуальную машину, настройки минимально необходимых для дальнейшей работы сервисов
 
-  * Кулябов Дмитрий Сергеевич
-  * д.ф.-м.н., профессор
-  * профессор кафедры прикладной информатики и теории вероятностей
-  * Российский университет дружбы народов
-  * [kulyabov-ds@rudn.ru](mailto:kulyabov-ds@rudn.ru)
-  * <https://yamadharma.github.io/ru/>
+# Процесс выполнения лабораторной работы
 
-:::
-::: {.column width="30%"}
+## Создаю виртуальную машину
 
-![](./image/kulyabov.jpg)
+Устанавливаю Fedora Sway с помощью Oracle VirtualBoxManager. Он был у меня уже до этого установлен, поэтому я просто добавляю новую машину и выбираю скачанный файл Fedora Sway Spin 41 
 
-:::
-::::::::::::::
+![Fedora Sway Spin 41](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image.png){#fig:001 width=70%}
 
-# Вводная часть
+## Далее я выделяю оптимальное количество памяти и количество CPu  
 
-## Актуальность
+![Base memory и Processors](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image2.png){#fig:002 width=70%}
 
-- Важно донести результаты своих исследований до окружающих
-- Научная презентация --- рабочий инструмент исследователя
-- Необходимо создавать презентацию быстро
-- Желательна минимизация усилий для создания презентации
+## Настраиваю образ
 
-## Объект и предмет исследования
+![ настройка iso файла](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image3.png){#fig:003 width=70%}
 
-- Презентация как текст
-- Программное обеспечение для создания презентаций
-- Входные и выходные форматы презентаций
+## Далее в настройках машины я захожу в Storage  и в conctroller IDE я добавляю iso file 
 
-## Цели и задачи
+![ настройка iso файла](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image4.png){#fig:004 width=70%}
 
-- Создать шаблон презентации в Markdown
-- Описать алгоритм создания выходных форматов презентаций
+## делаю так чтобы оптический диск был на первом месте для того чтобы загрузить fedora 
 
-## Материалы и методы
+![ настройка boot order](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image5.png){#fig:005 width=70%}
 
-- Процессор `pandoc` для входного формата Markdown
-- Результирующие форматы
-	- `pdf`
-	- `html`
-- Автоматизация процесса создания: `Makefile`
-
-# Создание презентации
-
-## Процессор `pandoc`
-
-- Pandoc: преобразователь текстовых файлов
-- Сайт: <https://pandoc.org/>
-- Репозиторий: <https://github.com/jgm/pandoc>
-
-## Формат `pdf`
-
-- Использование LaTeX
-- Пакет для презентации: [beamer](https://ctan.org/pkg/beamer)
-- Тема оформления: `metropolis`
-
-## Код для формата `pdf`
-
-```yaml
-slide_level: 2
-aspectratio: 169
-section-titles: true
-theme: metropolis
-```
-
-## Формат `html`
-
-- Используется фреймворк [reveal.js](https://revealjs.com/)
-- Используется [тема](https://revealjs.com/themes/) `beige`
-
-## Код для формата `html`
-
-- Тема задаётся в файле `Makefile`
-
-```make
-REVEALJS_THEME = beige 
-```
-# Результаты
-
-## Получающиеся форматы
-
-- Полученный `pdf`-файл можно демонстрировать в любой программе просмотра `pdf`
-- Полученный `html`-файл содержит в себе все ресурсы: изображения, css, скрипты
-
-# Элементы презентации
-
-## Актуальность
-
-- Даёт понять, о чём пойдёт речь
-- Следует широко и кратко описать проблему
-- Мотивировать свое исследование
-- Сформулировать цели и задачи
-- Возможна формулировка ожидаемых результатов
-
-## Цели и задачи
-
-- Не формулируйте более 1--2 целей исследования
-
-## Материалы и методы
-
-- Представляйте данные качественно
-- Количественно, только если крайне необходимо
-- Излишние детали не нужны
-
-## Содержание исследования
-
-- Предлагаемое решение задач исследования с обоснованием
-- Основные этапы работы
-
-## Результаты
-
-- Не нужны все результаты
-- Необходимы логические связки между слайдами
-- Необходимо показать понимание материала
+## открываю машину и начинаю загрузку, следуя инструкциям на экране
 
 
-## Итоговый слайд
+![ установка  Fedora Sway](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image6.png){#fig:006 width=70%}
 
-- Запоминается последняя фраза. © Штирлиц
-- Главное сообщение, которое вы хотите донести до слушателей
-- Избегайте использовать последний слайд вида *Спасибо за внимание*
+## Установка языка
 
-# Рекомендации
+![ установка  Fedora Sway](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image7.png){#fig:007 width=70%}
 
-## Принцип 10/20/30
+## Создание учетной записи
 
-  - 10 слайдов
-  - 20 минут на доклад
-  - 30 кегль шрифта
+![ создание учетной записи root Fedora Sway](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image8.png){#fig:008 width=70%}
 
-## Связь слайдов
+## Создание пароля
 
-::: incremental
+![ установка  пароля и имени пользователя](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image9.png){#fig:009 width=70%}
 
-- Один слайд --- одна мысль
-- Нельзя ссылаться на объекты, находящиеся на предыдущих слайдах (например, на формулы)
-- Каждый слайд должен иметь заголовок
+## Далее удаляю оптический диск из controller IDE, hard disk ставлю на первое место. Перезапускаю машину. Вхожу в ОС под заданной вами при установке учётной записью.
 
-:::
+![ вход в учетную запись](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image10.png){#fig:010 width=70%}
 
-## Количество сущностей
+## Устанавливаю средства разработки, обновляю все пакеты.
 
-::: incremental
+![ tmux, отключение  SELinux](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image 11.png){#fig:011 width=70%}
 
-- Человек может одновременно помнить $7 \pm 2$ элемента
-- При размещении информации на слайде старайтесь чтобы в сумме слайд содержал не более 5 элементов
-- Можно группировать элементы так, чтобы визуально было не более 5 групп
+## Установка программного обеспечения для создания документации
 
-:::
+![ установка pandoc](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image15.png){#fig:015 width=70%}
 
-## Общие рекомендации
+## Устанавливаю дистрибутив TeXlive
 
-::: incremental
+![ установка TeXlive](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image16.png){#fig:016 width=70%}
 
-- На слайд выносится та информация, которая без зрительной опоры воспринимается хуже
-- Слайды должны дополнять или обобщать содержание выступления или его частей, а не дублировать его
-- Информация на слайдах должна быть изложена кратко, чётко и хорошо структурирована
-- Слайд не должен быть перегружен графическими изображениями и текстом
-- Не злоупотребляйте анимацией и переходами
+## Рабочая система
 
-:::
+1. Версия ядра Linux (Linux version).
+![ Linux version](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image17.png){#fig:017 width=70%}
 
-## Представление данных
+2. Частота процессора (Detected Mhz processor).
+![ Detected Mhz processor](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image19.png){#fig:019 width=70%}
 
-::: incremental
+3. Модель процессора (CPU0). 
+![ CPU0](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image18.png){#fig:018 width=70%}
 
-- Лучше представить в виде схемы
-- Менее оптимально представить в виде рисунка, графика, таблицы
-- Текст используется, если все предыдущие способы отображения информации не подошли
+4. Объём доступной оперативной памяти (Memory available).
+![ Memory available](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image20.png){#fig:020 width=70%}
 
-:::
+5. Тип обнаруженного гипервизора (Hypervisor detected).
+![ Hypervisor detected](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image21.png){#fig:021 width=70%}
 
+6. Тип файловой системы корневого раздела.
+![ Тип файловой системы корневого раздела.](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image22.png){#fig:022 width=70%}
+
+7. Последовательность монтирования файловых систем.
+![ Последовательность монтирования файловых систем](/home/vboxuser/Desktop/labsreports/lab1/report/image/Pasted image23.png){#fig:023 width=70%}
+
+
+# Выводы по проделанной работе
+
+## Вывод
+
+Мы приобрели практические навыки установки операционной системы на виртуальную машину, настройки минимально необходимых для дальнейшей работы сервисов.

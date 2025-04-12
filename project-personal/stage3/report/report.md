@@ -1,10 +1,10 @@
 ---
 ## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+title: "Индивидуальный проект"
+subtitle: " Этап 3"
+author: "Швед Карина Дмитриевна"
 
-## Generic otions
+## Generic options
 lang: ru-RU
 toc-title: "Содержание"
 
@@ -21,17 +21,20 @@ fontsize: 12pt
 linestretch: 1.5
 papersize: a4
 documentclass: scrreprt
+
 ## I18n polyglossia
 polyglossia-lang:
   name: russian
   options:
-	- spelling=modern
-	- babelshorthands=true
+    - spelling=modern
+    - babelshorthands=true
 polyglossia-otherlangs:
   name: english
+
 ## I18n babel
 babel-lang: russian
 babel-otherlangs: english
+
 ## Fonts
 mainfont: IBM Plex Serif
 romanfont: IBM Plex Serif
@@ -43,6 +46,7 @@ romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
 sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
 monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
 mathfontoptions:
+
 ## Biblatex
 biblatex: true
 biblio-style: "gost-numeric"
@@ -53,6 +57,7 @@ biblatexoptions:
   - language=auto
   - autolang=other*
   - citestyle=gost-numeric
+
 ## Pandoc-crossref LaTeX customization
 figureTitle: "Рис."
 tableTitle: "Таблица"
@@ -60,62 +65,64 @@ listingTitle: "Листинг"
 lofTitle: "Список иллюстраций"
 lotTitle: "Список таблиц"
 lolTitle: "Листинги"
+
 ## Misc options
 indent: true
 header-includes:
   - \usepackage{indentfirst}
   - \usepackage{float} # keep figures where there are in the text
   - \floatplacement{figure}{H} # keep figures where there are in the text
+  
 ---
 
-# Цель работы
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+# Задачи 3-го этапа
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+Добавить к сайту достижения.
 
-# Задание
+Список достижений:
+Добавить информацию о навыках (Skills).
+Добавить информацию об опыте (Experience).
+Добавить информацию о достижениях (Accomplishments).
+Сделать пост по прошедшей неделе.
+Добавить пост на тему по выбору:
+Легковесные языки разметки.
+Языки разметки. LaTeX.
+Язык разметки Markdown.
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
-
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001]).
+Сначала я запускаю hugo server, чтобы видеть как изменения файлов влияют на мой сайт
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+Добавила достижения в файл /home/vboxuser/work/blog/content/authors/_index.md
+
+![изменение файла _index.md](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_12-59-33.jpg){#fig:001 width=70%}
+
+
+![достижения](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-02-55.jpg){#fig:002 width=70%}
+
+![достижения](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-03-01.jpg){#fig:003 width=70%}
+
+Теперь я перехожу к каталогу content/posts и внутри него создаю md файл для поста об Markdown,внутри каталога /home/vboxuser/work/blog/content/post/weekly-update я просто создаю еще один текстовый файл для описания прошлой недели
+
+![добавление постов](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-06-49.jpg){#fig:004 width=70%}
+
+Проверяю на локальном сервере как теперь выглядят мои посты
+
+![мои новые посты на сайте](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-08-21.jpg){#fig:005 width=70%}
+
+![мои новые посты на сайте](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-08-27.jpg){#fig:006 width=70%}
+
+Теперь у меня 4 поста на сайте
+
+![мои 4 поста](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-09-37.jpg){#fig:007 width=70%}
+
+Затем я перехожу в каталог blog и ввожу команду ~/bin/hugo начинает создаваться мой сайт. Теперь я копирую новое содержимое папки /home/vboxuser/work/blog/public в /home/vboxuser/work/karinashved.github.io. Затем добавляю изменения и фиксирую их на github. Теперь я могу открыть свой сайт в Интернете
+
+![мой сайт в интернете](/home/vboxuser/Desktop/personalsitereports/3d step/report/image/photo_2025-04-12_13-11-29.jpg){#fig:008 width=70%}
+
+
 
 # Выводы
-
-Здесь кратко описываются итоги проделанной работы.
-
-# Список литературы{.unnumbered}
-
-::: {#refs}
-:::
+На данном этапе я добавила достижения на свой сайт, а также 2 поста на тему прошедшей недели и статью о Markdown

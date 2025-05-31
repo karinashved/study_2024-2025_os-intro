@@ -1,10 +1,10 @@
 ---
 ## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+title: "Индивидуальный проект"
+subtitle: " Этап 6"
+author: "Швед Карина Дмитриевна"
 
-## Generic otions
+## Generic options
 lang: ru-RU
 toc-title: "Содержание"
 
@@ -21,17 +21,20 @@ fontsize: 12pt
 linestretch: 1.5
 papersize: a4
 documentclass: scrreprt
+
 ## I18n polyglossia
 polyglossia-lang:
   name: russian
   options:
-	- spelling=modern
-	- babelshorthands=true
+    - spelling=modern
+    - babelshorthands=true
 polyglossia-otherlangs:
   name: english
+
 ## I18n babel
 babel-lang: russian
 babel-otherlangs: english
+
 ## Fonts
 mainfont: IBM Plex Serif
 romanfont: IBM Plex Serif
@@ -43,6 +46,7 @@ romanfontoptions: Ligatures=Common,Ligatures=TeX,Scale=0.94
 sansfontoptions: Ligatures=Common,Ligatures=TeX,Scale=MatchLowercase,Scale=0.94
 monofontoptions: Scale=MatchLowercase,Scale=0.94,FakeStretch=0.9
 mathfontoptions:
+
 ## Biblatex
 biblatex: true
 biblio-style: "gost-numeric"
@@ -53,6 +57,7 @@ biblatexoptions:
   - language=auto
   - autolang=other*
   - citestyle=gost-numeric
+
 ## Pandoc-crossref LaTeX customization
 figureTitle: "Рис."
 tableTitle: "Таблица"
@@ -60,62 +65,56 @@ listingTitle: "Листинг"
 lofTitle: "Список иллюстраций"
 lotTitle: "Список таблиц"
 lolTitle: "Листинги"
+
 ## Misc options
 indent: true
 header-includes:
   - \usepackage{indentfirst}
   - \usepackage{float} # keep figures where there are in the text
   - \floatplacement{figure}{H} # keep figures where there are in the text
+  
 ---
 
-# Цель работы
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
+# Задачи 6-го этапа
 
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
+Размещение двуязычного сайта на Github.
 
-# Задание
+Сделать поддержку английского и русского языков.
+Разместить элементы сайта на обоих языках.
+Разместить контент на обоих языках.
+Сделать пост по прошедшей неделе.
+Добавить пост на тему по выбору (на двух языках).
 
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
-
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в табл. [-@tbl:std-dir] приведено краткое описание стандартных каталогов Unix.
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001]).
+Для начала я убрала общее menus.yaml, так как собираюсь делать его на 2 языках. Далее создаю новую структуру. В content я создаю два каталога en и ru для англоязычного и русскоязычного контента соответственно. Туда я дублирую все папки post,publication и т.д, но информацию и посты пишу на нужных языках
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+![2 каталога для английского и русского контента](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_21-50-38.png){#fig:001 width=70%}
+
+Добавляю в конфиг такой блок, чтобы Hugo понимал, что есть две языковые версии — английская и русская.
+
+![конфиг](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_21-51-11.png){#fig:002 width=70%}
+
+Теперь вся моя информация дублируется на двух языках. Предварительно я запустила hugo server, чтобы отслеживать изменения
+
+![био на русском](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_21-52-25.png){#fig:003 width=70%}
+
+
+![био на английском](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_21-52-37.png){#fig:004 width=70%}
+
+Далее я добавляю weekly-update и пост на тему дискретной математики в жизни аналитика
+
+![weekly-update 31/05/2025](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_22-22-52.png){#fig:005 width=70%}
+
+![пост про дискретную математику](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_22-27-21.png){#fig:006 width=70%}
+
+Далее ввожу hugo, чтобы забилдить сайт.Теперь я запускаю скрипт deploy.sh,который обновляет оид анные в удаленном репозитории на github
+
+![комит](/home/vboxuser/Desktop/personalsitereports/6th step/report/image/image_2025-05-31_22-29-26.png){#fig:007 width=70%}
+
+
 
 # Выводы
-
-Здесь кратко описываются итоги проделанной работы.
-
-# Список литературы{.unnumbered}
-
-::: {#refs}
-:::
+На данном этапе я разместила двуязычный сайт на Github.
